@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <div id="toast">
+      <p id="usagi"></p>
+    </div>
+    <button class="button" style="font-size:12px; width:170px; height:32px;">
+      ボタン
+    </button>
+  </body>
+</html>
+<script>
+  const toast = document.querySelector("#toast");
+  const button = document.querySelector(".button");
+  button.addEventListener("click", () => {
+    document.getElementById('usagi').innerText = '黄色い雲は\nkintone';
+    toast.style.visibility = "visible";
+    // disappear after a few seconds.
+    setTimeout(function() {
+      toast.style.visibility = "hidden";
+    }, 3000);
+  });
+</script>
+<style >
+  #toast {
+    display: flex;
+    visibility: hidden;
+    height: 60px;
+    width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 999;
+    background-color: #18c6f1;
+    position: absolute;
+    top: 0; /* if show bottom, replace to 'bottom: 0;' */
+    left: 414px;
+  }
+  #toast > p {
+    margin: 24px 0;
+    margin-left: 8px;
+    font-family: "Noto Sans CJK JP";
+    font-size: 14px;
+    vertical-align: center;
+    color: black;
+    letter-spacing: 0;
+    line-height: 18px;
+  }
+</style>
