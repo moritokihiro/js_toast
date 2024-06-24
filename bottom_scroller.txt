@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple App</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+    <div id="mytext">
+    <h1>Simple App</h1>
+    
+   
+    <h2>Posts</h2>
+    <ul>
+        <div id="mytext">
+        {% for post in posts %}
+            <li>{{ post.content }}</li>
+        {% endfor %}
+        </div>
+    </ul>
+    <form method="POST">
+        <input type="text" name="content" placeholder="Enter your post" required>
+        <button type="submit" id="POST_SUBMIT">Post</button>
+    </form>
+    <br>
+   
+</body>
+
+<script>
+    
+    // onload関数でもいける 
+    $(document).ready(function(){
+        const messagesArea = document.getElementById('mytext');
+        console.log(messagesArea.scrollHeight);
+        let messafe_length = messagesArea.scrollHeight;
+        $(window).scrollTop(messafe_length);
+    })
+
+    
+    
+</script>
+</html>
